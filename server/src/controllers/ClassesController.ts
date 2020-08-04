@@ -8,6 +8,58 @@ interface IScheduleItem {
   to: string;
 }
 
+interface IGroupedClasses {
+  id: number;
+  subject: string;
+  cost: number;
+  name: string;
+  avatar: string;
+  whatsapp: string;
+  bio: string;
+  class_schedules: object[];
+}
+
+async function groupClasses(classes: Array<any>) {
+  let groupedClasses: IGroupedClasses[] = [];
+
+  classes.forEach((item, index) => {
+    let alreadyExists = false;
+
+    if (groupedClasses?.length > 0)
+      groupedClasses.forEach((old, index) => {
+        if (old.id === item.user_id) {
+          alreadyExists = true;
+          old.class_schedules.push({
+            weekday: item.weekday,
+            from: item.from,
+            to: item.to,
+          });
+        }
+      });
+
+    if (!alreadyExists) {
+      groupedClasses.push({
+        id: item.user_id,
+        subject: item.subject,
+        cost: item.cost,
+        name: item.name,
+        avatar: item.avatar,
+        whatsapp: item.whatsapp,
+        bio: item.bio,
+        class_schedules: [
+          {
+            weekday: item.weekday,
+            from: item.from,
+            to: item.to,
+          },
+        ],
+      });
+    }
+  });
+
+  return groupedClasses;
+}
+
 export default class ClassesController {
   async index(req: Request, res: Response) {
     const filters = req.query;
@@ -45,7 +97,9 @@ export default class ClassesController {
       .innerJoin("users", "classes.user_id", "=", "users.id")
       .select(["classes.*", "users.*", "class_schedules.*"]);
 
-    return res.json(classes);
+    const groupedClasses = await groupClasses(classes);
+
+    return res.json(groupedClasses);
   }
 
   async create(req: Request, res: Response) {
