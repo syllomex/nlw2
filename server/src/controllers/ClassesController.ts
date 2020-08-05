@@ -22,11 +22,11 @@ interface IGroupedClasses {
 async function groupClasses(classes: Array<any>) {
   let groupedClasses: IGroupedClasses[] = [];
 
-  classes.forEach((item, index) => {
+  classes.forEach((item) => {
     let alreadyExists = false;
 
     if (groupedClasses?.length > 0)
-      groupedClasses.forEach((old, index) => {
+      groupedClasses.forEach((old) => {
         if (old.id === item.user_id) {
           alreadyExists = true;
           old.class_schedules.push({
