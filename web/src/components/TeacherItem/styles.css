@@ -67,7 +67,7 @@
   color: var(--color-primary);
 }
 
-.teacher-item footer button {
+.teacher-item footer a {
   cursor: pointer;
 
   display: flex;
@@ -80,6 +80,7 @@
   background-color: var(--color-secondary);
   color: var(--color-button-text);
   font: 700 1.4rem Archivo;
+  text-decoration: none;
 
   border: 0;
   border-radius: 0.8rem;
@@ -87,7 +88,7 @@
   transition: 0.2s;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer a:hover {
   background-color: var(--color-secondary-dark);
 }
 
@@ -106,13 +107,13 @@
     margin-left: 1.6rem;
   }
 
-  .teacher-item footer button {
+  .teacher-item footer a {
     justify-content: center;
     width: 24.5rem;
 
     font-size: 1.6rem;
   }
-  .teacher-item footer button img {
+  .teacher-item footer a img {
     margin-right: 1.6rem;
   }
 }
