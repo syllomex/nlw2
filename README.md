@@ -3,3 +3,5 @@
 #### Aplicação desenvolvida no Bootcamp Next Level Week 2, da Rocketseat.
 
 ##### ReactJS, ReactNative e Node.js
+
+Atualmente em busca da "Milha extra"
