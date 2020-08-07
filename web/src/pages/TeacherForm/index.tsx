@@ -28,6 +28,7 @@ function TeacherForm() {
     field: string,
     value: string | number
   ) {
+    console.log("oi")
     const schedules = scheduleItems.map((item, i) => {
       if (index === i) {
         return { ...item, [field]: value };

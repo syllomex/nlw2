@@ -11,9 +11,14 @@
   font-size: 1.4rem;
 }
 
-.select-block select {
+.select-block button {
   width: 100%;
   height: 5.6rem;
+
+  display: flex;
+  text-align: start;
+  align-items: center;
+  justify-content: space-between;
 
   background-color: var(--color-input-background);
 
@@ -24,20 +29,49 @@
   padding: 0 1.6rem;
   margin-top: 0.8rem;
 
-  font: 1.6rem Archivo;
+  font: 1.6rem Poppins;
 }
 
-.select-block:focus-within::after {
+.select-block button:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select-block .options {
   position: absolute;
+  z-index: 10;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 50rem;
 
-  background-color: var(--color-primary-light);
+  background-color: var(--color-input-background);
 
-  width: calc(100% - 3.2rem);
-  height: 2px;
+  border: 1px solid var(--color-line-in-white);
+  border-top: 0;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
 
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 0;
+.select-block .options li {
+  cursor: pointer;
+  list-style: none;
 
-  content: "";
+  display: flex;
+  align-items: center;
+
+  height: 5.6rem;
+  padding: 0 1.6rem;
+}
+
+.select-block .options li:not(:last-child) {
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+
+.select-block .options li:hover {
+  background-color: var(--color-hover-background);
+}
+
+.select-block .options .active {
+  background-color: var(--color-hover-background);
+  border-left: 1px solid var(--color-primary);
+  font-weight: 700;
 }

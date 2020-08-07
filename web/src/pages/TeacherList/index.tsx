@@ -35,6 +35,10 @@ function TeacherList() {
     setParams({ ...params, [e.target.name]: e.target.value });
   }
 
+  function handleSelect(name: string, value: string) {
+    setParams({ ...params, [name]: value });
+  }
+
   useEffect(() => {
     if (
       params.subject !== "" &&
@@ -72,7 +76,7 @@ function TeacherList() {
               { value: "Educação Física", label: "Educação Física" },
               { value: "Artes", label: "Artes" },
             ]}
-            onChange={handleChange}
+            onChangeOption={handleSelect}
           />
           <Select
             label="Dia da semana"
@@ -84,7 +88,7 @@ function TeacherList() {
               { value: "5", label: "Quinta-feira" },
               { value: "6", label: "Sexta-feira" },
             ]}
-            onChange={handleChange}
+            onChangeOption={handleSelect}
           />
           <Input label="Hora" name="time" type="time" onChange={handleChange} />
           <button type="submit" hidden />
