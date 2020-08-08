@@ -6,6 +6,8 @@
 
 Atualmente em busca da "Milha extra"
 
+- [ ] Alterações no layout - Web
+- [ ] Alterações no layout - Mobile
 - [ ] Autenticação de usuários
 - [ ] Logout
 - [ ] Recuperação de senhas
