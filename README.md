@@ -14,6 +14,6 @@ Atualmente em busca da "Milha extra"
 - [ ] Perfil do proffy
 - [ ] Splash screen
 - [ ] Paginação na listagem de proffys
-- [ ] Exibir horários dos proffys
+- [x] Exibir horários dos proffys
 - [ ] Salvar favoritos no banco de dados
 - [ ] Deploy da aplicação

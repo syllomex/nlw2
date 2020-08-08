@@ -107,6 +107,7 @@ function TeacherList() {
               name={teacher.name}
               subject={teacher.subject}
               whatsapp={teacher.whatsapp}
+              schedules={teacher.class_schedules}
             />
           );
         })}
