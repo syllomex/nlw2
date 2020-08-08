@@ -57,12 +57,13 @@ const TeacherItem: React.FC<ITeacherProps> = ({
         from =
           Math.floor(schedule.from / 60).toString() +
           ":" +
-          ((schedule.from % 60) * 60).toString().padEnd(2, "0");
+          (schedule.from % 60).toString().padEnd(2, "0");
 
         to =
           Math.floor(schedule.to / 60).toString() +
           ":" +
-          ((schedule.to % 60) * 60).toString().padEnd(2, "0");
+          (schedule.to % 60).toString().padEnd(2, "0");
+
         schedulesArray.push({ weekday: converted_weekday, from, to });
         exists = true;
       }
