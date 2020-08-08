@@ -6,6 +6,7 @@
 
 Atualmente em busca da "Milha extra"
 
+- [x] Exibir horários dos proffys
 - [ ] Alterações no layout - Web
 - [ ] Alterações no layout - Mobile
 - [ ] Autenticação de usuários
@@ -14,6 +15,5 @@ Atualmente em busca da "Milha extra"
 - [ ] Perfil do proffy
 - [ ] Splash screen
 - [ ] Paginação na listagem de proffys
-- [x] Exibir horários dos proffys
 - [ ] Salvar favoritos no banco de dados
 - [ ] Deploy da aplicação
